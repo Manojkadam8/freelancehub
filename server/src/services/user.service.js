@@ -1,12 +1,13 @@
-const registerUser = (userData) => {
+const userRepository = require("../repositories/user.repository");
 
-    return {
-        success: true,
-        message: "Registration Successful"
-    };
 
+
+const createUser = async (userData) => {
+    const user = await userRepository.createUser(userData);
+
+    return user;
 };
 
 module.exports = {
-    registerUser
+    createUser,
 };
